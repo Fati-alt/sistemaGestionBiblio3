@@ -1,0 +1,226 @@
+from models import *
+
+print("Materiales")
+#libros
+lib1 = Libro(1, "Harry Potter", 1997, "J.K. Rowling", "978-0", "Fantasia")
+lib2 = Libro(2, "El Señor de los Anillos", 1954, "J.R.R. Tolkien", "978-1", "Fantasia")
+lib3 = Libro(3, "Cien años de soledad", 1967, "Gabriel Garcia Marquez", "978-2", "Realismo Magico")
+lib4 = Libro(4, "1984", 1949, "George Orwell", "978-3", "Distopia")
+#revistas
+rev1 = Revista(5, "National Geographic", 2023, "NatGeo Editorial", 320)
+rev2 = Revista(6, "Science Today", 2024, "Science Group", 115)
+rev3 = Revista(7, "Tech World", 2022, "Tech Media", 48)
+#material digital
+matd1 = MaterialDigital(8, "Curso Python", 2021, "Video","https://udemy.com/python", 500)
+matd2 = MaterialDigital(9, "Introduccion a IA", 2022, "PDF","https://coursera.org/ai", 120)
+matd3 = MaterialDigital(10, "Algoritmos en Python", 2020, "Ebook","https://mit.edu/python-algoritmos", 80)
+
+
+print(lib1.obtenerInformacion())
+print(lib1.verificarDisponibilidad())
+print(lib2.obtenerInformacion())
+print(lib2.verificarDisponibilidad())
+print(lib2.cambiarDisponibilidad())
+print(lib3.obtenerInformacion())
+print(lib3.verificarDisponibilidad())
+print(lib3.cambiarDisponibilidad())
+print(lib4.obtenerInformacion())
+print(lib4.verificarDisponibilidad())
+print(lib4.cambiarDisponibilidad())
+print(rev1.obtenerInformacion())
+print(rev1.verificarDisponibilidad())
+print(rev1.cambiarDisponibilidad())
+print(rev2.obtenerInformacion())
+print(rev2.verificarDisponibilidad())
+print(rev2.cambiarDisponibilidad())
+print(rev3.obtenerInformacion())
+print(rev3.verificarDisponibilidad())
+print(rev3.cambiarDisponibilidad())
+print(matd1.obtenerInformacion())
+print(matd1.verificarDisponibilidad())
+print(matd1.cambiarDisponibilidad())
+print(matd2.obtenerInformacion())
+print(matd2.verificarDisponibilidad())
+print(matd2.cambiarDisponibilidad())
+print(matd3.obtenerInformacion())
+print(matd3.verificarDisponibilidad())
+print(matd3.cambiarDisponibilidad())
+
+
+#persona
+print("Personas")
+per1 = Persona(1, "Juan Perez", "juan@gmaIl.com")
+per2 = Persona(2, "Maria Lopez", "maria@gmail.com")
+per3 = Persona(3, "Luis Hernandez", "luis@gmail.com")
+per4 = Persona(4, "Sofia Martinez", "sofia@gmail.com")
+per5 = Persona(5, "Diego Ramirez", "diego@gmail.com")
+
+print(per1.login())
+print(per1.actualizarDatos("juannuevo@gmail.com"))
+print(per2.login())
+print(per2.actualizarDatos("marianuevo@gmail.com"))
+print(per3.login())
+print(per3.actualizarDatos("luisnuevo@gmail.com"))
+print(per4.login())
+print(per4.actualizarDatos("sofianuevo@gmail.com"))
+print(per5.login())
+print(per5.actualizarDatos("diegonuevo@gmail.com"))
+
+#usuarios
+print("Usuarios")
+u1 = Usuario(5, "Ana Torres", "ana@gmail.com", 3)
+u2 = Usuario(7, "Pedro Sanchez", "pedro@gmail.com", 2)
+u3 = Usuario(8, "Laura Gomez", "laura@gmail.com", 1)
+print(u1.login())
+print(u2.login())
+print(u3.login())
+
+#bibliotecarios
+print("Biblitecarios")
+bib1 = Bibliotecario(8, "Carlos Ruiz", "carlos@gmail.com")
+bib2 = Bibliotecario(10, "Elena Vargas", "elena@gmail.com")
+bib3 = Bibliotecario(11, "Miguel Torres", "miguel@gmail.com")
+print(bib1.login())
+print(bib2.login())
+print(bib3.login())
+
+#sucursales
+print("Sucursales")
+suc1 = Sucursal(1, "Sucursal Centro")
+suc2 = Sucursal(2, "Sucursal Norte")
+suc3 = Sucursal(3, "Sucursal Sur")
+suc4 = Sucursal(4, "Sucursal Este")
+suc5 = Sucursal(5, "Sucursal Oeste")
+suc6 = Sucursal(6, "Sucursal Universidad")
+suc7 = Sucursal(7, "Sucursal Tecnologica")
+suc8 = Sucursal(8, "Sucursal Biblioteca Central")
+suc9 = Sucursal(9, "Sucursal Infantil")
+suc10 = Sucursal(10, "Sucursal Digital")
+
+print(suc1.agregarMaterial(lib2))
+print(suc2.agregarMaterial(lib2))
+print(suc3.agregarMaterial(lib3))
+print(suc4.agregarMaterial(lib4))
+print(suc5.agregarMaterial(rev1))
+print(suc6.agregarMaterial(rev2))
+print(suc7.agregarMaterial(rev3))
+print(suc8.agregarMaterial(matd1))
+print(suc9.agregarMaterial(matd2))
+print(suc10.agregarMaterial(matd3))
+
+
+#prestamos
+print("Prestamos")
+pres1 = Prestamo(1, "2026-03-01", "2024-03-15", u1, lib1)
+pres2 = Prestamo(2, "2026-03-02", "2026-03-16", u2, lib2)
+pres3 = Prestamo(3, "2026-03-03", "2026-03-17", u3, lib3)
+pres4 = Prestamo(4, "2026-03-04", "2026-03-18", u1, lib4)
+pres5 = Prestamo(5, "2026-03-05", "2026-03-19", u2, rev1)
+pres6 = Prestamo(6, "2026-03-06", "2026-03-20", u3, rev2)
+pres7 = Prestamo(7, "2026-03-07", "2026-03-21", u1, rev3)
+pres8 = Prestamo(8, "2026-03-08", "2026-03-22", u2, matd1)
+pres9 = Prestamo(9, "2026-03-09", "2026-03-23", u3, matd2)
+pres10 = Prestamo(10, "2026-03-10", "2026-03-24", u1, matd3) 
+
+print(pres1.obtenerDetalle())
+print(pres2.obtenerDetalle())
+print(pres3.obtenerDetalle())
+print(pres4.obtenerDetalle())
+print(pres5.obtenerDetalle())
+print(pres6.obtenerDetalle())
+print(pres7.obtenerDetalle())
+print(pres8.obtenerDetalle())
+print(pres9.obtenerDetalle())
+print(pres10.obtenerDetalle())
+
+#pruebas 
+print(u1.agregarPrestamo(pres1))
+print(bib1.gestionarPrestamo(pres1))
+print(bib1.transferirMaterial(lib1, suc1))
+
+#penalizaciones
+print("Penalizaciones")
+p1 = Penalizacion(50.0, "Retraso en devolucion")
+p2 = Penalizacion(30.0, "Material dañado")
+p3 = Penalizacion(20.0, "Entrega tardia")
+p4 = Penalizacion(40.0, "Prestamo excedido")
+p5 = Penalizacion(25.0, "Retraso menor")
+p6 = Penalizacion(60.0, "Perdida de material")
+p7 = Penalizacion(35.0, "Retraso prolongado")
+p8 = Penalizacion(15.0, "Advertencia por retraso")
+p9 = Penalizacion(45.0, "Incumplimiento de plazo")
+p10 = Penalizacion(55.0, "Uso indebido del material")
+print(p1.calcularMulta(5, u1))
+print(p2.calcularMulta(3, u2))
+print(p3.calcularMulta(2, u3))
+print(p4.calcularMulta(6, u1))
+print(p5.calcularMulta(1, u2))
+print(p6.calcularMulta(7, u3))
+print(p7.calcularMulta(4, u1))
+print(p8.calcularMulta(2, u2))
+print(p9.calcularMulta(5, u3))
+print(p10.calcularMulta(6, u1))
+print(p1.bloquearUsuario(u1))
+print(p2.bloquearUsuario(u2))
+print(p3.bloquearUsuario(u3))
+
+
+#catalago
+print("Catalogos")
+cat1 = Catalogo([lib1, lib2, lib3,lib4])
+cat2 = Catalogo([lib3, lib4])
+cat3 = Catalogo([rev1, rev2])
+cat4 = Catalogo([rev3])
+cat5 = Catalogo([matd1])
+cat6 = Catalogo([matd2])
+cat7 = Catalogo([matd3])
+cat8 = Catalogo([lib1, rev1])
+cat9 = Catalogo([lib2, matd1])
+cat10 = Catalogo([lib3, rev2, matd2])
+
+print(cat1.buscarPorAutor("J.K. Rowling"))
+print(cat1.buscarEnTodasSucursales("1984"))
+print(cat2.buscarPorAutor("George Orwell"))
+print(cat3.buscarEnTodasSucursales("National Geographic"))
+print(cat4.buscarEnTodasSucursales("Tech World"))
+print(cat5.buscarEnTodasSucursales("Curso Python"))
+print(cat6.buscarEnTodasSucursales("Introduccion a IA"))
+print(cat7.buscarEnTodasSucursales("Algoritmos en Python"))
+print(cat8.buscarPorAutor("J.K. Rowling"))
+print(cat9.buscarEnTodasSucursales("Harry Potter"))
+print(cat10.buscarEnTodasSucursales("Cien años de soledad"))
+
+#menu
+def buscar_autor():
+    print("\n Busca por autor")
+    print(cat1.buscarPorAutor("J.K. Rowling"))
+
+def ver_disponibilidad():
+    print("\n Disponibilidad")
+    print(lib1.verificarDisponibilidad())
+    print(lib2.verificarDisponibilidad())
+def realizar_prestamo():
+    print("\n Realizando Prestamo...")
+    print(u1.login())
+    print(lib1.verificarDisponibilidad())
+    print(bib1.gestionarPrestamo(pres1))
+    print(u1.agregarPrestamo(pres1))
+    print(lib1.cambiarDisponibilidad())
+
+def menu():
+    while True:
+        print("\n Menu Biblioteca")
+        print("1. Buscar por autor")
+        print("2. Ver disponibilidad")
+        print("3. Realizar prestamo")
+        print("4. Salir")
+        opcion = input("Selecciona:")
+        if opcion == "1":
+            buscar_autor()
+        elif opcion == "2":
+            ver_disponibilidad()
+        elif opcion == "3":
+            realizar_prestamo()
+        elif opcion == "4":
+            break
+menu()
